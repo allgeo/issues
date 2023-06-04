@@ -1,3 +1,3 @@
 <div align="center">
-  <h4>🚧 UNDER CONSTRUCTION, PLEASE CHECK BACK LATER🚧</h4>
+  <h4>🚧 UNDER CONSTRUCTION 🚧</h4>
 </div>
