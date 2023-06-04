@@ -1,2 +1,3 @@
-# issues
-A web app for finding beginner friendly issues on open source github repos. 
+<div align="center">
+  <h4>🚧 UNDER CONSTRUCTION, PLEASE CHECK BACK LATER🚧</h4>
+</div>
