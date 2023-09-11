@@ -1,0 +1,57 @@
+import { SECRET_GITHUB_TOKEN } from '$env/static/private';
+
+const parameter = {
+    stars_start: '10000',
+    stars_end: '50000',
+    language: 'rust',
+    first_repo: '5',
+    first_issue: '1',
+}
+
+const query = `{
+    search(query: "stars:${parameter.stars_start}..${parameter.stars_end} language:${parameter.language}", type: REPOSITORY, first: ${parameter.first_repo}) {
+        edges {
+          node {
+            ... on Repository {
+              nameWithOwner
+              issues(states: OPEN, first: ${parameter.first_issue}) {
+                edges {
+                  node {
+                    title
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+}`;
+
+export const load = async () => {
+    const res = await fetch("https://api.github.com/graphql", {
+        method: "POST",
+        headers: {
+            Authorization: `bearer ${SECRET_GITHUB_TOKEN}`,
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ query })
+    });
+    const data = await res.json();
+
+    const repositories = data.data.search.edges;
+    const result = repositories.map(repo => {
+        const repoNameWithOwner = repo.node.nameWithOwner;
+        const issues = repo.node.issues.edges.map(issue => ({
+            title: issue.node.title,
+            url: issue.node.url,
+        }));
+        return { repoNameWithOwner, issues };
+    });
+
+    console.log(result)
+
+    return {
+        result
+    };
+};

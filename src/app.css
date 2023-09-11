@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: "Fira Code", monospace;
+    }
+}
+.dot {
+    --dot-bg: rgb(255, 255, 255);
+    --dot-color: rgb(152, 186, 226);
+    --dot-size: 1px;
+    --dot-space: 22px;
+    background: linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%)center / var(--dot-space) var(--dot-space),
+                linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),transparent 1%)center / var(--dot-space) var(--dot-space),var(--dot-color);
+}
+
+.grid {
+    --grid-color: rgba(202, 220, 240, 0.61);
+    --grid-space: 22px;
+    background: linear-gradient(90deg, var(--grid-color) 1px, transparent 1px) 0 / var(--grid-space) var(--grid-space),
+                linear-gradient(var(--grid-color) 1px, transparent 1px) 0 / var(--grid-space) var(--grid-space);
+  }
+  
