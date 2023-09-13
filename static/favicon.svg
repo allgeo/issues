@@ -1,3 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg">
-    <text y="32" font-size="32">💽</text>  
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="128" height="128" rx="25" fill="#2DA44E"/>
+<rect x="24.0859" y="17.604" width="85.6125" height="85.6125" rx="42.8063" transform="rotate(4.34275 24.0859 17.604)" fill="white"/>
+<rect x="32.5386" y="27.4443" width="67.267" height="67.267" rx="33.6335" transform="rotate(4.34275 32.5386 27.4443)" fill="#2DA44E"/>
+<rect x="56.0767" y="53.687" width="15.2879" height="15.2879" rx="7.64397" transform="rotate(4.34275 56.0767 53.687)" fill="white"/>
 </svg>
