@@ -18,7 +18,7 @@
                 linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),transparent 1%)center / var(--dot-space) var(--dot-space),var(--dot-color);
 }
 
-.grid {
+.my-grid {
     --grid-color: rgba(202, 220, 240, 0.61);
     --grid-space: 22px;
     background: linear-gradient(90deg, var(--grid-color) 1px, transparent 1px) 0 / var(--grid-space) var(--grid-space),

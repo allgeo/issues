@@ -4,7 +4,7 @@ const parameter = {
     stars_start: '5000',
     stars_end: '100000',
     language: 'python',
-    first_repo: '5',
+    first_repo: '50',
     first_issue: '3',
     label: "good first commit"
 }
@@ -33,6 +33,9 @@ const queryAllRepos = `{
           node {
             ... on Repository {
               nameWithOwner
+              stargazers {
+                totalCount
+              }
               issues(states: OPEN, first: ${parameter.first_issue}) {
                 edges {
                   node {
