@@ -4,7 +4,7 @@ const parameter = {
     stars_start: '5000',
     stars_end: '100000',
     language: 'python',
-    first_repo: '50',
+    first_repo: '25',
     first_issue: '3',
     label: "good first commit"
 }
