@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    import anime from 'animejs';
+    import Open from './Open.svelte';
 
     export let data;
     const { all } = data;
@@ -9,24 +9,21 @@
         location.reload();
     }
 
-    // Disable page scroll
     onMount(() => {
       document.body.style.overflow = 'hidden';
     });
 </script>
 
-
-<div class="flex flex-col h-screen mt-36 ">
-    
-    <div class="flex items-center justify-center flex-shrink-0">
-        <button on:click={refreshPage} class="p-2 px-4 mb-4 text-white bg-blue-500 rounded">
-            click for random issues
-        </button>
+<div class="flex flex-col h-screen mt-36">
+    <div class="flex items-center justify-center flex-shrink-0 mb-6">
+        <button on:click={refreshPage} class="p-2 px-4 text-black rounded-full ">show me random</button>
+        <Open on:click={refreshPage}/>
+        <button on:click={refreshPage} class="p-2 px-4 text-black rounded-full ">issues</button>
     </div>
     <div class="flex-grow overflow-y-auto">
         <div class="flex flex-col items-center p-4">
             <div class="max-w-full rounded github-data">
-                <ul class="grid grid-cols-2 gap-4">
+                <ul class="grid grid-cols-1 gap-4 md:grid-cols-2">
                     {#if all}
                         {#each all as repo}
                             {#if repo.node.issues.edges.length > 0}
