@@ -15,14 +15,18 @@
 </script>
 
 <div class="flex flex-col h-screen mt-36">
+
     <div class="flex items-center justify-center flex-shrink-0 mb-6">
-        <button on:click={refreshPage} class="p-2 px-4 text-black rounded-full ">show me random</button>
+        <button on:click={refreshPage} class="p-2 px-4 text-black rounded-full ">click <span class="text-green-500 underline underline-offset-4">here</span> to show me random</button>
         <Open on:click={refreshPage}/>
         <button on:click={refreshPage} class="p-2 px-4 text-black rounded-full ">issues</button>
     </div>
     <div class="flex-grow overflow-y-auto">
         <div class="flex flex-col items-center p-4">
+        <h5 class="text-xs opacity-25">🚧 still under construction 🚧</h5> <br><br>
+
             <div class="max-w-full rounded github-data">
+                
                 <ul class="grid grid-cols-1 gap-4 md:grid-cols-2">
                     {#if all}
                         {#each all as repo}
